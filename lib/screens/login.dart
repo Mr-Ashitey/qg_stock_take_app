@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: getProportionateScreenHeight(20)),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amberAccent,
+                  backgroundColor: colorYellow,
                   fixedSize: Size(MediaQuery.sizeOf(context).width,
                       getProportionateScreenHeight(40)),
                 ),
