@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
+import 'package:qg_stock_take_app/screens/select_station.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -22,7 +23,7 @@ class LoginScreen extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: 'Phone Number',
                     hintStyle: TextStyle(
-                      fontSize: getProportionateScreenHeight(21),
+                      fontSize: getProportionateScreenHeight(15),
                       color: Colors.black38,
                     ),
                     filled: true,
@@ -35,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: 'Station Code',
                     hintStyle: TextStyle(
-                      fontSize: getProportionateScreenHeight(21),
+                      fontSize: getProportionateScreenHeight(15),
                       color: Colors.black38,
                     ),
                     filled: true,
@@ -45,7 +46,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: getProportionateScreenHeight(20)),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amberAccent,
+                  backgroundColor: colorYellow,
                   fixedSize: Size(MediaQuery.sizeOf(context).width,
                       getProportionateScreenHeight(40)),
                 ),
@@ -57,7 +58,12 @@ class LoginScreen extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SelectStation()));
+                },
               )
             ],
           ),
