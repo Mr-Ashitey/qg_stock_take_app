@@ -38,16 +38,86 @@ class SalesScreen extends StatelessWidget {
               ),
               Text(
                 'Stock for: Dec 13,2019',
-                style: TextStyle(fontSize: getProportionateScreenHeight(20)),
+                style: TextStyle(
+                    fontSize: getProportionateScreenHeight(19),
+                    fontWeight: FontWeight.bold),
               ),
-              InkWell(
-                child: Card(
-                  color: colorDeepBlue1,
-                ),
-              )
+              SizedBox(
+                height: getProportionateScreenHeight(15),
+              ),
+              buildCard(
+                'Power Diesel',
+                0.00,
+                0.00,
+                0.00,
+                0.00,
+                0.00,
+                0.00,
+                () {},
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  buildCard(
+    String title,
+    double grandTotal,
+    double credit,
+    double creditSale,
+    double cashSale,
+    double gensetSale,
+    double fuelCoupon,
+    // Color color,
+    VoidCallback onPressed,
+  ) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        padding: const EdgeInsets.only(top: 20, left: 10),
+        backgroundColor: colorDeepBlue1,
+        fixedSize: Size(
+          double.maxFinite,
+          getProportionateScreenHeight(150),
+        ),
+      ),
+      child: Column(
+        // mainAxisAlignment: mainSpaceBetween,
+        children: [
+          Align(
+            alignment: Alignment.topLeft,
+            child: Icon(
+              Icons.help_outline,
+              color: primaryDarkColor,
+            ),
+          ),
+          Center(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: getProportionateScreenHeight(17),
+                color: colorWhite,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          Text(
+            'Grand Total: $grandTotal',
+          ),
+          Text(
+            'Credit Sale: $creditSale',
+          ),
+          Text(
+            'Cash Sale: $cashSale',
+          ),
+          Text(
+            'Genset Sale: $gensetSale',
+          ),
+          Text('Fuel Coupon: $fuelCoupon')
+        ],
       ),
     );
   }
