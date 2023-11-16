@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/stock_take.dart';
 
 class SelectStation extends StatelessWidget {
   const SelectStation({super.key});
@@ -40,7 +41,12 @@ class SelectStation extends StatelessWidget {
                   childAspectRatio: 4,
                   children: [
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const StockTakeScreen()));
+                      },
                       color: colorGrey,
                       elevation: 0,
                       child: Text('Odoo', style: TextStyle(color: colorWhite)),
