@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: 'Phone Number',
                     hintStyle: TextStyle(
-                      fontSize: getProportionateScreenHeight(21),
+                      fontSize: getProportionateScreenHeight(15),
                       color: Colors.black38,
                     ),
                     filled: true,
@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: 'Station Code',
                     hintStyle: TextStyle(
-                      fontSize: getProportionateScreenHeight(21),
+                      fontSize: getProportionateScreenHeight(15),
                       color: Colors.black38,
                     ),
                     filled: true,
