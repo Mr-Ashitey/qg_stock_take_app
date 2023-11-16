@@ -74,7 +74,7 @@ class StockTakeScreen extends StatelessWidget {
     );
   }
 
-  buildCard(
+  ElevatedButton buildCard(
     String title,
     Color color,
     VoidCallback onPressed,

@@ -62,7 +62,7 @@ class SalesScreen extends StatelessWidget {
     );
   }
 
-  buildCard(
+  ElevatedButton buildCard(
     String title,
     double grandTotal,
     double credit,
@@ -77,12 +77,8 @@ class SalesScreen extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        padding: const EdgeInsets.only(top: 20, left: 10),
+        padding: const EdgeInsets.only(top: 20, left: 10, bottom: 20),
         backgroundColor: colorDeepBlue1,
-        fixedSize: Size(
-          double.maxFinite,
-          getProportionateScreenHeight(150),
-        ),
       ),
       child: Column(
         // mainAxisAlignment: mainSpaceBetween,
