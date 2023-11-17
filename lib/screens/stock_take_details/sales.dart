@@ -43,39 +43,39 @@ class SalesScreen extends StatelessWidget {
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
               buildSaleCard(
-                'Power Diesel',
-                0.00,
-                0.00,
-                0.00,
-                0.00,
-                0.00,
-                0.00,
-                () {},
+                title: 'Power Diesel',
+                grandTotal: 0.00,
+                credit: 0.00,
+                creditSale: 0.00,
+                cashSale: 0.00,
+                gensetSale: 0.00,
+                fuelCoupon: 0.00,
+                onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
               buildCardDamsa(
-                'DAMSA(Power Diesel)',
-                'DT1',
-                0,
-                () {},
+                title: 'DAMSA(Power Diesel)',
+                tank: 'DT1',
+                variation: 0,
+                onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
               buildSaleCard(
-                'Power Super',
-                0.00,
-                0.00,
-                0.00,
-                0.00,
-                0.00,
-                0.00,
-                () {},
+                title: 'Power Super',
+                grandTotal: 0.00,
+                credit: 0.00,
+                creditSale: 0.00,
+                cashSale: 0.00,
+                gensetSale: 0.00,
+                fuelCoupon: 0.00,
+                onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
               buildCardDamsa(
-                'DAMSA(Power Super)',
-                'ST1',
-                0,
-                () {},
+                title: 'DAMSA(Power Super)',
+                tank: 'ST1',
+                variation: 0,
+                onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
               ElevatedButton(
@@ -121,16 +121,15 @@ class SalesScreen extends StatelessWidget {
   }
 
   ElevatedButton buildSaleCard(
-    String title,
-    double grandTotal,
-    double credit,
-    double creditSale,
-    double cashSale,
-    double gensetSale,
-    double fuelCoupon,
-    // Color color,
-    VoidCallback onPressed,
-  ) {
+      {required String title,
+      required double grandTotal,
+      required double credit,
+      required double creditSale,
+      required double cashSale,
+      required double gensetSale,
+      required double fuelCoupon,
+      // Color color,
+      required VoidCallback onPressed}) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -176,12 +175,12 @@ class SalesScreen extends StatelessWidget {
     );
   }
 
-  ElevatedButton buildCardDamsa(
-    String title,
-    String variationTitle,
-    double variation,
-    VoidCallback onPressed,
-  ) {
+  ElevatedButton buildCardDamsa({
+    required String title,
+    required String tank,
+    required double variation,
+    required VoidCallback onPressed,
+  }) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -209,8 +208,8 @@ class SalesScreen extends StatelessWidget {
               ),
             ),
           ),
-          Text('Variation for $variationTitle: $variation'),
-          Text('Variation for $variationTitle: $variation'),
+          Text('Variation for $tank: $variation'),
+          Text('Variation for $tank: $variation'),
           SizedBox(height: getProportionateScreenHeight(35)),
         ],
       ),
