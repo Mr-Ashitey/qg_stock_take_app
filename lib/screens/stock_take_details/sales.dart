@@ -53,7 +53,7 @@ class SalesScreen extends StatelessWidget {
                 onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
-              buildCardDamsa(
+              buildDamsaCard(
                 title: 'DAMSA(Power Diesel)',
                 tank: 'DT1',
                 variation: 0,
@@ -71,7 +71,7 @@ class SalesScreen extends StatelessWidget {
                 onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
-              buildCardDamsa(
+              buildDamsaCard(
                 title: 'DAMSA(Power Super)',
                 tank: 'ST1',
                 variation: 0,
@@ -175,7 +175,7 @@ class SalesScreen extends StatelessWidget {
     );
   }
 
-  ElevatedButton buildCardDamsa({
+  ElevatedButton buildDamsaCard({
     required String title,
     required String tank,
     required double variation,
