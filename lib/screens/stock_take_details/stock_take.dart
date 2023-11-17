@@ -10,16 +10,9 @@ class StockTakeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: getProportionateScreenHeight(60),
         automaticallyImplyLeading: false,
         backgroundColor: primaryColor,
-        title: Text(
-          'Kasoa Akweley F/S 2.0v',
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-            color: colorWhite,
-          ),
-        ),
+        title: const Text('Kasoa Akweley F/S 2.0v'),
         actions: [
           IconButton(
             onPressed: () {},
