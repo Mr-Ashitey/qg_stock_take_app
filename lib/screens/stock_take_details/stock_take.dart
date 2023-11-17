@@ -38,9 +38,9 @@ class StockTakeScreen extends StatelessWidget {
                 height: getProportionateScreenHeight(10),
               ),
               buildCard(
-                'Sales',
-                primaryColor,
-                () {
+                title: 'Sales',
+                color: primaryColor,
+                onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -51,21 +51,21 @@ class StockTakeScreen extends StatelessWidget {
                 height: getProportionateScreenHeight(15),
               ),
               buildCard(
-                'Cash',
-                primaryColor2,
-                () {},
+                title: 'Cash',
+                color: primaryColor2,
+                onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
               buildCard(
-                'Sales Summary',
-                primaryColor3,
-                () {},
+                title: 'Sales Summary',
+                color: primaryColor3,
+                onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
               buildCard(
-                'Signed Document',
-                primaryColor3,
-                () {},
+                title: 'Signed Document',
+                color: primaryColor3,
+                onPressed: () {},
               ),
             ],
           ),
@@ -75,10 +75,9 @@ class StockTakeScreen extends StatelessWidget {
   }
 
   ElevatedButton buildCard(
-    String title,
-    Color color,
-    VoidCallback onPressed,
-  ) {
+      {required String title,
+      required Color color,
+      required VoidCallback onPressed}) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
