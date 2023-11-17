@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
-import 'package:qg_stock_take_app/screens/stock_take_details/sales.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/sales/sales.dart';
 
 class StockTakeScreen extends StatelessWidget {
   const StockTakeScreen({super.key});
@@ -30,6 +30,8 @@ class StockTakeScreen extends StatelessWidget {
               SizedBox(
                 height: getProportionateScreenHeight(10),
               ),
+
+              // card for the sales
               buildCard(
                 title: 'Sales',
                 color: primaryColor,
@@ -43,18 +45,24 @@ class StockTakeScreen extends StatelessWidget {
               SizedBox(
                 height: getProportionateScreenHeight(15),
               ),
+
+              // card for cash
               buildCard(
                 title: 'Cash',
                 color: primaryColor2,
                 onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
+
+              // card for sales summary
               buildCard(
                 title: 'Sales Summary',
                 color: primaryColor3,
                 onPressed: () {},
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
+
+              // card for signed document
               buildCard(
                 title: 'Signed Document',
                 color: primaryColor3,
@@ -67,6 +75,7 @@ class StockTakeScreen extends StatelessWidget {
     );
   }
 
+// a method and design template for the cards used in the stock take page
   ElevatedButton buildCard(
       {required String title,
       required Color color,
