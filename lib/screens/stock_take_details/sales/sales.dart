@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/sales/nozzle_reports.dart';
 
 class SalesScreen extends StatelessWidget {
   const SalesScreen({super.key});
@@ -33,6 +34,8 @@ class SalesScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
+
+            // card for power diesel
             buildSaleCard(
               title: 'Power Diesel',
               grandTotal: 0.00,
@@ -41,9 +44,16 @@ class SalesScreen extends StatelessWidget {
               cashSale: 0.00,
               gensetSale: 0.00,
               fuelCoupon: 0.00,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NozzlesScreen()));
+              },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
+
+            // DAMSA power diesel card
             buildDamsaCard(
               title: 'DAMSA(Power Diesel)',
               tank: 'DT1',
@@ -51,6 +61,8 @@ class SalesScreen extends StatelessWidget {
               onPressed: () {},
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
+
+            // a card for power super
             buildSaleCard(
               title: 'Power Super',
               grandTotal: 0.00,
@@ -62,6 +74,8 @@ class SalesScreen extends StatelessWidget {
               onPressed: () {},
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
+
+            // DAMSA power super card
             buildDamsaCard(
               title: 'DAMSA(Power Super)',
               tank: 'ST1',
@@ -69,6 +83,8 @@ class SalesScreen extends StatelessWidget {
               onPressed: () {},
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
+
+            // card for stock loss
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
@@ -109,6 +125,7 @@ class SalesScreen extends StatelessWidget {
     );
   }
 
+// method and card template for power cards
   ElevatedButton buildSaleCard(
       {required String title,
       required double grandTotal,
@@ -163,6 +180,7 @@ class SalesScreen extends StatelessWidget {
     );
   }
 
+// method and template for DAMSA cards
   ElevatedButton buildDamsaCard({
     required String title,
     required String tank,
