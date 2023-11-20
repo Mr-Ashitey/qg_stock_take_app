@@ -19,6 +19,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               TextField(
+                keyboardType: TextInputType.phone,
                 onTapOutside: (event) => FocusScope.of(context).unfocus(),
                 decoration: InputDecoration(
                     hintText: 'Phone Number',
@@ -32,6 +33,7 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: getProportionateScreenHeight(10)),
               TextField(
+                keyboardType: TextInputType.phone,
                 onTapOutside: (event) => FocusScope.of(context).unfocus(),
                 decoration: InputDecoration(
                     hintText: 'Station Code',
