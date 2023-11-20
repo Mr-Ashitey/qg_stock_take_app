@@ -11,7 +11,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'PFBeauSansPro'),
+      theme: ThemeData(
+        fontFamily: 'PFBeauSansPro',
+        useMaterial3: false,
+      ),
       home: const LoginScreen(),
     );
   }
