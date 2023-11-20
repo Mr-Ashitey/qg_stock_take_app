@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SalesPage extends StatelessWidget {
+class SalesPage extends StatefulWidget {
   const SalesPage({super.key});
 
+  @override
+  State<SalesPage> createState() => _SalesPageState();
+}
+
+class _SalesPageState extends State<SalesPage>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,4 +17,7 @@ class SalesPage extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

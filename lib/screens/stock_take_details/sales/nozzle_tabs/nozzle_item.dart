@@ -72,7 +72,7 @@ class _NozzleItemState extends State<NozzleItem>
             -200.00,
           ),
           const Divider(color: Colors.black38),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          SizedBox(height: getProportionateScreenHeight(10)),
           getField(
             'Comment',
             Colors.black38,
