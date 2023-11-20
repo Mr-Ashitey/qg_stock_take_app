@@ -46,24 +46,32 @@ class _NozzleItemState extends State<NozzleItem>
           getText(
             'Opening Meter',
           ),
-          getField(
-            '200.0',
-            Colors.black,
-          ),
           SizedBox(height: getProportionateScreenHeight(15)),
-          getText('Closing Meter'),
-          getField(
-            '0.0',
-            Colors.black,
+          getMeterReading(
+            200.0,
           ),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          const Divider(
+            color: Colors.black38,
+          ),
+          SizedBox(height: getProportionateScreenHeight(1)),
+          getText('Closing Meter'),
+          SizedBox(height: getProportionateScreenHeight(15)),
+          getMeterReading(
+            0.00,
+          ),
+          const Divider(color: Colors.black38),
+          SizedBox(height: getProportionateScreenHeight(10)),
           getField(
             'RTT',
             Colors.black38,
           ),
           SizedBox(height: getProportionateScreenHeight(15)),
           getText('Meter Sales(LTRS)'),
-          getField('-200.000', Colors.black),
+          SizedBox(height: getProportionateScreenHeight(15)),
+          getMeterReading(
+            -200.00,
+          ),
+          const Divider(color: Colors.black38),
           SizedBox(height: getProportionateScreenHeight(20)),
           getField(
             'Comment',
@@ -80,6 +88,16 @@ class _NozzleItemState extends State<NozzleItem>
         ],
       ),
     ));
+  }
+
+  Text getMeterReading(double meterReading) {
+    return Text(
+      "$meterReading",
+      style: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      ),
+    );
   }
 
 // method to get text header of some fields
