@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
-class NozzleItem extends StatelessWidget {
+class NozzleItem extends StatefulWidget {
   const NozzleItem({super.key});
 
+  @override
+  State<NozzleItem> createState() => _NozzleItemState();
+}
+
+class _NozzleItemState extends State<NozzleItem>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,4 +113,7 @@ class NozzleItem extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
