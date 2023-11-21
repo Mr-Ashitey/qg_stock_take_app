@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/sales/damsa.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/sales/nozzle_reports.dart';
 
 class SalesScreen extends StatelessWidget {
@@ -60,7 +61,13 @@ class SalesScreen extends StatelessWidget {
               title: 'DAMSA(Power Diesel)',
               tank: 'DT1',
               variation: 0,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const DAMSA(title: 'Power Diesel')));
+              },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
 
@@ -89,7 +96,13 @@ class SalesScreen extends StatelessWidget {
               title: 'DAMSA(Power Super)',
               tank: 'ST1',
               variation: 0,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const DAMSA(title: 'Power Super')));
+              },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
 
