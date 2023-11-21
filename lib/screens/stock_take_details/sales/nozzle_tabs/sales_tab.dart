@@ -11,13 +11,7 @@ class SalesPage extends StatefulWidget {
 
 class _SalesPageState extends State<SalesPage>
     with AutomaticKeepAliveClientMixin {
-  final List<String> saleTypes = [
-    'Cash sales',
-    'Credit sales',
-    'Genset sales',
-    'Fuel Coupon',
-  ];
-  String defaultItem = 'Select sales type';
+  String dropdownValue = 'Select sales type';
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +33,7 @@ class _SalesPageState extends State<SalesPage>
   @override
   bool get wantKeepAlive => true;
 
+// shows alert dialog box once floating action button is clicked
   void _showDialog() {
     showDialog(
         context: context,
@@ -59,7 +54,7 @@ class _SalesPageState extends State<SalesPage>
                 children: [
                   DropdownButtonFormField<String>(
                     decoration: const InputDecoration(border: InputBorder.none),
-                    value: defaultItem,
+                    value: dropdownValue,
                     items: [
                       'Select sales type',
                       'Cash sales',
@@ -80,35 +75,69 @@ class _SalesPageState extends State<SalesPage>
                     }).toList(),
                     onChanged: (String? value) {
                       setState(() {
-                        defaultItem = value!;
+                        dropdownValue = value!;
                       });
                     },
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Volume',
-                      hintStyle: TextStyle(
-                        color: Colors.black38,
-                        fontSize: getProportionateScreenHeight(15),
-                      ),
-                      border: const UnderlineInputBorder(),
-                    ),
+                  getField(
+                    'Volume',
                   ),
                   SizedBox(height: getProportionateScreenHeight(5)),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Unit Price',
-                      hintStyle: TextStyle(
-                        color: Colors.black38,
-                        fontSize: getProportionateScreenHeight(15),
-                      ),
-                      border: const UnderlineInputBorder(),
-                    ),
+                  getField(
+                    'Unit Price',
                   ),
+                  SizedBox(height: getProportionateScreenHeight(40)),
+                  getVolumeRemaining(
+                    -600.0,
+                  )
                 ],
               ),
             ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  'CANCEL',
+                  style: TextStyle(color: colorYellow),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  'ADD',
+                  style: TextStyle(color: colorYellow),
+                ),
+              ),
+            ],
           );
         });
+  }
+
+// this method gets the volume remaining and returns it
+  Text getVolumeRemaining(double volumeRemaining) {
+    return Text(
+      'Volume Remaining(Litres): $volumeRemaining',
+      textAlign: TextAlign.right,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: getProportionateScreenHeight(13),
+      ),
+    );
+  }
+
+//this method is for the textfields in the alert dialog box
+  TextField getField(String hint) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: TextStyle(
+          color: Colors.black38,
+          fontSize: getProportionateScreenHeight(15),
+        ),
+        border: const UnderlineInputBorder(),
+      ),
+    );
   }
 }
