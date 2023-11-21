@@ -17,7 +17,7 @@ class _GoodsInTransitState extends State<GoodsInTransit>
     super.build(context);
     return Scaffold(
       floatingActionButton: buildSpeedDial(),
-      body: const Center(child: Text('Goods in transit')),
+      body: null,
     );
   }
 
