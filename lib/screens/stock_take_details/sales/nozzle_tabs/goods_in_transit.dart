@@ -67,37 +67,40 @@ class _GoodsInTransitState extends State<GoodsInTransit>
             content: Column(
               crossAxisAlignment: crossStart,
               children: [
-                getDropDownForm('Select product',
-                    ['Select product', 'product 1', 'product 2', 'product 3']),
+                getDropDownForm('Select product', [
+                  'Select product',
+                  'Diesel',
+                  'Super',
+                ]),
                 getDropDownForm(
-                  'From: Depot',
-                  ['From: Depot', 'Depot 1', 'Depot 2', 'Depot 3'],
+                  'From: ',
+                  ['From: ', 'Depot', 'Station'],
                 ),
                 getField(
                   'Invoice Number',
+                  Colors.black38,
                 ),
                 SizedBox(height: getProportionateScreenHeight(5)),
                 getField(
                   'Truck Number',
+                  Colors.black38,
                 ),
                 SizedBox(height: getProportionateScreenHeight(10)),
                 getText(
                   'Price on Delivery Note',
                 ),
-                SizedBox(height: getProportionateScreenHeight(10)),
-                getReading(
-                  0.0,
+                getField(
+                  '0.0',
+                  Colors.black,
                 ),
-                const Divider(color: Colors.black38),
-                SizedBox(height: getProportionateScreenHeight(5)),
+                SizedBox(height: getProportionateScreenHeight(10)),
                 getText(
                   'Expected Discharge',
                 ),
-                SizedBox(height: getProportionateScreenHeight(10)),
-                getReading(
-                  0.0,
+                getField(
+                  '0.0',
+                  Colors.black,
                 ),
-                const Divider(color: Colors.black38),
                 SizedBox(height: getProportionateScreenHeight(20)),
                 Text(
                   'Take a Picture of Delivery Note',
@@ -110,18 +113,22 @@ class _GoodsInTransitState extends State<GoodsInTransit>
                 SizedBox(
                   height: getProportionateScreenHeight(10),
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  height: getProportionateScreenHeight(100),
-                  color: primaryColor3.withOpacity(.6),
-                  child: const Icon(
-                    Icons.camera_alt_rounded,
-                    color: Colors.black38,
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: getProportionateScreenHeight(100),
+                    color: primaryColor3.withOpacity(.6),
+                    child: const Icon(
+                      Icons.camera_alt_rounded,
+                      color: Colors.black38,
+                    ),
                   ),
                 ),
                 SizedBox(height: getProportionateScreenHeight(15)),
                 getField(
                   'Comment',
+                  Colors.black38,
                 ),
               ],
             ),
@@ -145,17 +152,6 @@ class _GoodsInTransitState extends State<GoodsInTransit>
             ],
           );
         });
-  }
-
-// method to get reading on delivery note and expected discharge
-  Text getReading(double reading) {
-    return Text(
-      "$reading",
-      style: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-      ),
-    );
   }
 
 // method to get text header of fields that are not textfields
@@ -201,12 +197,12 @@ class _GoodsInTransitState extends State<GoodsInTransit>
   }
 
 //this method is for the textfields in the alert dialog box
-  TextField getField(String hint) {
+  TextField getField(String hint, Color color) {
     return TextField(
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(
-          color: Colors.black38,
+          color: color,
           fontSize: getProportionateScreenHeight(18),
         ),
         border: const UnderlineInputBorder(),

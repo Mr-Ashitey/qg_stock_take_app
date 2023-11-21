@@ -48,7 +48,9 @@ class SalesScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const NozzlesScreen(title: 'Power Diesel',)));
+                        builder: (context) => const NozzlesScreen(
+                              title: 'Power Diesel',
+                            )));
               },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
@@ -71,7 +73,14 @@ class SalesScreen extends StatelessWidget {
               cashSale: 0.00,
               gensetSale: 0.00,
               fuelCoupon: 0.00,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NozzlesScreen(
+                              title: 'Power Super',
+                            )));
+              },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
 
