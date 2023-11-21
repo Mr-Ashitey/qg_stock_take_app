@@ -7,7 +7,8 @@ import 'package:qg_stock_take_app/screens/stock_take_details/sales/nozzle_tabs/s
 import 'package:qg_stock_take_app/screens/stock_take_details/sales/nozzle_tabs/transfer_tab.dart';
 
 class NozzlesScreen extends StatefulWidget {
-  const NozzlesScreen({super.key});
+  final String title;
+  const NozzlesScreen({super.key, required this.title});
 
   @override
   State<NozzlesScreen> createState() => _NozzlesScreenState();
@@ -27,8 +28,8 @@ class _NozzlesScreenState extends State<NozzlesScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Power Diesel',
+        title: Text(
+          widget.title,
         ),
         backgroundColor: primaryColor,
         actions: [
