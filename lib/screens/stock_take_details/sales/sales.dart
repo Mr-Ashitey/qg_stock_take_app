@@ -48,7 +48,7 @@ class SalesScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const NozzlesScreen()));
+                        builder: (context) => const NozzlesScreen(title: 'Power Diesel',)));
               },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
