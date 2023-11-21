@@ -13,6 +13,7 @@ class _NozzleItemState extends State<NozzleItem>
     with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
         body: SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -55,11 +56,7 @@ class _NozzleItemState extends State<NozzleItem>
           ),
           SizedBox(height: getProportionateScreenHeight(1)),
           getText('Closing Meter'),
-          SizedBox(height: getProportionateScreenHeight(15)),
-          getMeterReading(
-            0.00,
-          ),
-          const Divider(color: Colors.black38),
+          getField('0.0', Colors.black),
           SizedBox(height: getProportionateScreenHeight(10)),
           getField(
             'RTT',

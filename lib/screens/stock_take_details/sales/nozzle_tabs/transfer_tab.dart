@@ -11,9 +11,8 @@ class _TransferPageState extends State<TransferPage>
     with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text('Transfer page')),
-    );
+    super.build(context);
+    return const Scaffold(body: null);
   }
 
   @override

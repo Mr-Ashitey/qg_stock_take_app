@@ -14,6 +14,7 @@ class _GoodsInTransitState extends State<GoodsInTransit>
     with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       floatingActionButton: buildSpeedDial(),
       body: const Center(child: Text('Goods in transit')),

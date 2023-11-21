@@ -15,6 +15,7 @@ class _SalesPageState extends State<SalesPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: _showDialog,
@@ -24,9 +25,7 @@ class _SalesPageState extends State<SalesPage>
           color: Colors.black,
         ),
       ),
-      body: const Center(
-        child: Text('Sales page'),
-      ),
+      body: null,
     );
   }
 
