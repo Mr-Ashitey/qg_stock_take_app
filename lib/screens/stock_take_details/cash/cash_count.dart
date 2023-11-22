@@ -9,6 +9,7 @@ class CashCount extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: mainSpaceBetween,
           children: [
             Table(
               border: TableBorder.all(),
@@ -58,11 +59,13 @@ class CashCount extends StatelessWidget {
                   getFieldText(),
                   getTotal(0.0),
                 ]),
-                TableRow(children: [
-                  getNoFieldText('1 Coin'),
-                  getFieldText(),
-                  getTotal(0.0),
-                ]),
+                TableRow(
+                  children: [
+                    getNoFieldText('1 Coin'),
+                    getFieldText(),
+                    getTotal(0.0),
+                  ],
+                ),
               ],
             ),
           ],
@@ -115,7 +118,7 @@ class CashCount extends StatelessWidget {
             textAlign: TextAlign.start,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: getProportionateScreenHeight(22),
+              fontSize: getProportionateScreenHeight(18),
             ),
           ),
         ],
@@ -137,7 +140,7 @@ class CashCount extends StatelessWidget {
             textAlign: TextAlign.start,
             style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: getProportionateScreenHeight(23),
+              fontSize: getProportionateScreenHeight(18),
             ),
           ),
         ],
