@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/cash/cash_count.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/cash/cash_in_till.dart';
-import 'package:qg_stock_take_app/screens/stock_take_details/cash/petty_cash.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/size_config.dart';
@@ -45,10 +44,10 @@ class _CashPageState extends State<CashPage>
       ),
       body: TabBarView(
         controller: tabController,
-        children: const [
-          CashCount(),
-          PettyCash(),
-          CashInTill(),
+        children: [
+          const CashCount(),
+          Container(),
+          const CashInTill(),
         ],
       ),
     );
