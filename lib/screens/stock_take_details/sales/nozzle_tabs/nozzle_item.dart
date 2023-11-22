@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
-class NozzleItem extends StatelessWidget {
+class NozzleItem extends StatefulWidget {
   const NozzleItem({super.key});
 
   @override
+  State<NozzleItem> createState() => _NozzleItemState();
+}
+
+class _NozzleItemState extends State<NozzleItem>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
         body: SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -40,25 +47,29 @@ class NozzleItem extends StatelessWidget {
           getText(
             'Opening Meter',
           ),
-          getField(
-            '200.0',
-            Colors.black,
-          ),
           SizedBox(height: getProportionateScreenHeight(15)),
-          getText('Closing Meter'),
-          getField(
-            '0.0',
-            Colors.black,
+          getMeterReading(
+            200.0,
           ),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          const Divider(
+            color: Colors.black38,
+          ),
+          SizedBox(height: getProportionateScreenHeight(1)),
+          getText('Closing Meter'),
+          getField('0.0', Colors.black),
+          SizedBox(height: getProportionateScreenHeight(10)),
           getField(
             'RTT',
             Colors.black38,
           ),
           SizedBox(height: getProportionateScreenHeight(15)),
           getText('Meter Sales(LTRS)'),
-          getField('-200.000', Colors.black),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          SizedBox(height: getProportionateScreenHeight(15)),
+          getMeterReading(
+            -200.00,
+          ),
+          const Divider(color: Colors.black38),
+          SizedBox(height: getProportionateScreenHeight(10)),
           getField(
             'Comment',
             Colors.black38,
@@ -74,6 +85,16 @@ class NozzleItem extends StatelessWidget {
         ],
       ),
     ));
+  }
+
+  Text getMeterReading(double meterReading) {
+    return Text(
+      "$meterReading",
+      style: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      ),
+    );
   }
 
 // method to get text header of some fields
@@ -107,4 +128,7 @@ class NozzleItem extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

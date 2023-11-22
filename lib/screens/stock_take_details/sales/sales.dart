@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/sales/damsa.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/sales/nozzle_reports.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/sales/stock_loss/stock_loss.dart';
 
 class SalesScreen extends StatelessWidget {
   const SalesScreen({super.key});
@@ -48,7 +50,9 @@ class SalesScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const NozzlesScreen()));
+                        builder: (context) => const NozzlesScreen(
+                              title: 'Power Diesel',
+                            )));
               },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
@@ -58,7 +62,13 @@ class SalesScreen extends StatelessWidget {
               title: 'DAMSA(Power Diesel)',
               tank: 'DT1',
               variation: 0,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const DAMSA(title: 'Power Diesel')));
+              },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
 
@@ -71,7 +81,14 @@ class SalesScreen extends StatelessWidget {
               cashSale: 0.00,
               gensetSale: 0.00,
               fuelCoupon: 0.00,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NozzlesScreen(
+                              title: 'Power Super',
+                            )));
+              },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
 
@@ -80,13 +97,22 @@ class SalesScreen extends StatelessWidget {
               title: 'DAMSA(Power Super)',
               tank: 'ST1',
               variation: 0,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const DAMSA(title: 'Power Super')));
+              },
             ),
             SizedBox(height: getProportionateScreenHeight(15)),
 
             // card for stock loss
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const StockLoss()));
+              },
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 alignment: Alignment.center,
