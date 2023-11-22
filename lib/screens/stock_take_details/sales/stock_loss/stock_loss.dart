@@ -31,6 +31,7 @@ class _StockLossState extends State<StockLoss>
         bottom: TabBar(
           labelStyle: TextStyle(fontSize: getProportionateScreenHeight(14)),
           indicatorWeight: 3,
+          indicatorColor: colorYellow,
           controller: tabController,
           tabs: const [
             Text('DT1'),

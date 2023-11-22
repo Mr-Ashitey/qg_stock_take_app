@@ -41,10 +41,11 @@ class _NozzlesScreenState extends State<NozzlesScreen>
                 color: colorWhite,
               ),
             ),
-          ),
+          ),  
         ],
         bottom: TabBar(
           isScrollable: true,
+          indicatorColor: colorYellow,
           labelStyle: TextStyle(fontSize: getProportionateScreenHeight(14)),
           indicatorWeight: 3,
           controller: tabController,
