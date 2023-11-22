@@ -45,14 +45,7 @@ class _NozzlesScreenState extends State<NozzlesScreen>
         ],
         bottom: TabBar(
           isScrollable: true,
-          labelColor: colorYellow,
-          labelStyle: TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: getProportionateScreenHeight(14),
-          ),
-          labelPadding: const EdgeInsets.all(15),
-          indicatorColor: colorYellow,
-          unselectedLabelColor: colorWhite,
+          labelStyle: TextStyle(fontSize: getProportionateScreenHeight(14)),
           indicatorWeight: 3,
           controller: tabController,
           tabs: const [
