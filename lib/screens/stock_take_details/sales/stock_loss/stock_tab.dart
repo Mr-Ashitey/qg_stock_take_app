@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:qg_stock_take_app/constants/size_config.dart';
 
-class StockTab extends StatefulWidget {
+class StockTab extends StatelessWidget {
   const StockTab({super.key});
 
   @override
-  State<StockTab> createState() => _StockTabState();
-}
-
-class _StockTabState extends State<StockTab> {
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          crossAxisAlignment: crossStart,
+          children: [
+            SizedBox(height: getProportionateScreenHeight(10)),
+          ],
+        ),
+      ),
+    );
   }
 }
