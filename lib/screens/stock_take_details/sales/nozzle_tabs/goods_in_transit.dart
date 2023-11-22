@@ -135,9 +135,7 @@ class _GoodsInTransitState extends State<GoodsInTransit>
             ),
             actions: [
               TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: () => Navigator.pop(context),
                 child: Text(
                   'CANCEL',
                   style: TextStyle(color: colorYellow),
