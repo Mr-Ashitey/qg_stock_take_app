@@ -51,7 +51,7 @@ class _DAMSAState extends State<DAMSA> {
               '0.0',
               Colors.black,
             ),
-            SizedBox(height: getProportionateScreenHeight(20)),
+            SizedBox(height: getProportionateScreenHeight(30)),
             getField(
               'Water Level',
               Colors.black38,
@@ -128,7 +128,7 @@ class _DAMSAState extends State<DAMSA> {
     return Text(
       "$reading",
       style: const TextStyle(
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: FontWeight.w600,
       ),
     );
@@ -157,7 +157,7 @@ class _DAMSAState extends State<DAMSA> {
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w500,
           color: color,
           fontSize: getProportionateScreenHeight(18),
         ),
