@@ -13,8 +13,15 @@ class CashPage extends StatefulWidget {
   State<CashPage> createState() => _CashPageState();
 }
 
-class _CashPageState extends State<CashPage> {
+class _CashPageState extends State<CashPage>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
+
+  @override
+  void initState() {
+    tabController = TabController(length: 3, vsync: this);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
