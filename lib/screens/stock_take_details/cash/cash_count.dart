@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
 class CashCount extends StatelessWidget {
@@ -9,7 +10,6 @@ class CashCount extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: mainSpaceBetween,
           children: [
             Table(
               border: TableBorder.all(),
@@ -17,53 +17,53 @@ class CashCount extends StatelessWidget {
                 TableRow(children: [
                   getNoFieldText('200 Note'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('100 Note'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('50 Note'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('20 Note'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('10 Note'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('5 Note'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('2 Note'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('1 Note'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('2 Coin'),
                   getFieldText(),
-                  getTotal(0.0),
+                  getQuantityTotal(0.0),
                 ]),
                 TableRow(
                   children: [
                     getNoFieldText('1 Coin'),
                     getFieldText(),
-                    getTotal(0.0),
+                    getQuantityTotal(0.0),
                   ],
                 ),
               ],
@@ -71,6 +71,30 @@ class CashCount extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          height: 100,
+          color: Colors.black87,
+          child: Column(
+            crossAxisAlignment: crossStart,
+            children: [
+              SizedBox(height: getProportionateScreenHeight(15)),
+              getAmount('Note', 0.0),
+              SizedBox(height: getProportionateScreenHeight(10)),
+              getAmount('Coin', 0.0)
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Text getAmount(String currency, double totalAmount) {
+    return Text(
+      'Total $currency Amount: ₵$totalAmount',
+      style: TextStyle(
+          color: colorWhite, fontSize: getProportionateScreenHeight(20)),
     );
   }
 
@@ -126,7 +150,7 @@ class CashCount extends StatelessWidget {
     );
   }
 
-  Padding getTotal(double total) {
+  Padding getQuantityTotal(double total) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
