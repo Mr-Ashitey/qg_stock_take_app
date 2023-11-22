@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/screens/login.dart';
+import 'package:qg_stock_take_app/util/database_util.dart';
 
 import 'constants/colors.dart';
 
-void main() {
-  runApp(const MainApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DatabaseUtil().initDatabase();
+
+  runApp(const StockTakeApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class StockTakeApp extends StatelessWidget {
+  const StockTakeApp({super.key});
 
   @override
   Widget build(BuildContext context) {
