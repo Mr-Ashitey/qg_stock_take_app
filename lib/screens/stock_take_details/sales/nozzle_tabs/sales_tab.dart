@@ -11,8 +11,6 @@ class SalesPage extends StatefulWidget {
 
 class _SalesPageState extends State<SalesPage>
     with AutomaticKeepAliveClientMixin {
-  String dropdownValue = 'Select sales type';
-
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -34,6 +32,8 @@ class _SalesPageState extends State<SalesPage>
 
 // shows alert dialog box once floating action button is clicked
   void _showDialog() {
+    String dropdownValue = 'Select sales type';
+
     showDialog(
         context: context,
         builder: (BuildContext context) {
