@@ -33,6 +33,7 @@ class _SalesTabState extends State<SalesTab>
 // shows alert dialog box once floating action button is clicked
   void _showDialog() {
     String dropdownValue = 'Select sales type';
+    double volumeRemaining = -600.0;
 
     showDialog(
         context: context,
@@ -86,8 +87,13 @@ class _SalesTabState extends State<SalesTab>
                     'Unit Price',
                   ),
                   SizedBox(height: getProportionateScreenHeight(40)),
-                  getVolumeRemaining(
-                    -600.0,
+                  Text(
+                    'Volume Remaining(Litres): $volumeRemaining',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: getProportionateScreenHeight(13),
+                    ),
                   )
                 ],
               ),
@@ -112,18 +118,6 @@ class _SalesTabState extends State<SalesTab>
             ],
           );
         });
-  }
-
-// this method gets the volume remaining and returns it
-  Text getVolumeRemaining(double volumeRemaining) {
-    return Text(
-      'Volume Remaining(Litres): $volumeRemaining',
-      textAlign: TextAlign.right,
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: getProportionateScreenHeight(13),
-      ),
-    );
   }
 
 //this method is for the textfields in the alert dialog box
