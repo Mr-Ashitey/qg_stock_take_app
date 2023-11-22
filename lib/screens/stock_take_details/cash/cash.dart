@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/cash/cash_count.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/cash/cash_in_till.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/cash/petty_cash.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/size_config.dart';
@@ -19,7 +22,7 @@ class _CashPageState extends State<CashPage> {
       appBar: AppBar(
         backgroundColor: primaryColor,
         title: const Text(
-          'Stock Loss',
+          'Cash Count',
         ),
         bottom: TabBar(
           labelStyle: TextStyle(fontSize: getProportionateScreenHeight(14)),
@@ -36,9 +39,9 @@ class _CashPageState extends State<CashPage> {
       body: TabBarView(
         controller: tabController,
         children: const [
-          // StockTab(),
-          // StockTab(),
-          // StockTab(),
+          CashCount(),
+          PettyCash(),
+          CashInTill(),
         ],
       ),
     );
