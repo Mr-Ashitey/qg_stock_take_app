@@ -66,7 +66,7 @@ class _NozzlesScreenState extends State<NozzlesScreen>
           NozzleItem(),
           NozzleItem(),
           NozzleItem(),
-          SalesPage(),
+          SalesTab(),
           TransferPage(),
           GoodsInTransit(),
         ],

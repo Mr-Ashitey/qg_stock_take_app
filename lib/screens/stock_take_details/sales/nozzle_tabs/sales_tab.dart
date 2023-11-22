@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
-class SalesPage extends StatefulWidget {
-  const SalesPage({super.key});
+class SalesTab extends StatefulWidget {
+  const SalesTab({super.key});
 
   @override
-  State<SalesPage> createState() => _SalesPageState();
+  State<SalesTab> createState() => _SalesTabState();
 }
 
-class _SalesPageState extends State<SalesPage>
+class _SalesTabState extends State<SalesTab>
     with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
