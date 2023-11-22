@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/cash/cash.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/sales/sales.dart';
 
 class StockTakeScreen extends StatelessWidget {
@@ -50,7 +51,12 @@ class StockTakeScreen extends StatelessWidget {
               buildCard(
                 title: 'Cash',
                 color: primaryColor2,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CashPage()));
+                },
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
 
