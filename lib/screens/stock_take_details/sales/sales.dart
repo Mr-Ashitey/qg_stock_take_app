@@ -3,6 +3,7 @@ import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/sales/damsa.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/sales/nozzle_reports.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/sales/stock_loss/stock_loss.dart';
 
 class SalesScreen extends StatelessWidget {
   const SalesScreen({super.key});
@@ -108,7 +109,10 @@ class SalesScreen extends StatelessWidget {
 
             // card for stock loss
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const StockLoss()));
+              },
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 alignment: Alignment.center,
