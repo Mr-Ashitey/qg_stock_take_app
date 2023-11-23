@@ -26,7 +26,7 @@ class _CashInTillState extends State<CashInTill> {
       bottomNavigationBar: BottomAppBar(
         child: Container(
           padding: const EdgeInsets.all(8),
-          height: 40,
+          height: getProportionateScreenHeight(42),
           color: Colors.black87,
           child: Text(
             'Total Amount: ₵ $totalAmount',
