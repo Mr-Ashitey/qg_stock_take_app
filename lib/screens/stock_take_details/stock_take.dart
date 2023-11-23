@@ -3,6 +3,7 @@ import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/cash/cash.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/sales/sales.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/sales_summary/sales_summary.dart';
 
 class StockTakeScreen extends StatelessWidget {
   const StockTakeScreen({super.key});
@@ -64,7 +65,12 @@ class StockTakeScreen extends StatelessWidget {
               buildCard(
                 title: 'Sales Summary',
                 color: primaryColor3,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SalesSummary()));
+                },
               ),
               SizedBox(height: getProportionateScreenHeight(15)),
 
