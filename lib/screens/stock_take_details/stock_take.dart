@@ -4,6 +4,7 @@ import 'package:qg_stock_take_app/constants/size_config.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/cash/cash.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/sales/sales.dart';
 import 'package:qg_stock_take_app/screens/stock_take_details/sales_summary/sales_summary.dart';
+import 'package:qg_stock_take_app/screens/stock_take_details/signed_document/signed_document.dart';
 
 class StockTakeScreen extends StatelessWidget {
   const StockTakeScreen({super.key});
@@ -78,7 +79,12 @@ class StockTakeScreen extends StatelessWidget {
               buildCard(
                 title: 'Signed Document',
                 color: primaryColor3,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignedDocument()));
+                },
               ),
             ],
           ),
