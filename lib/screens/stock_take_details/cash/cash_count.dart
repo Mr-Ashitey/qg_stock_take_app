@@ -16,53 +16,53 @@ class CashCount extends StatelessWidget {
               children: [
                 TableRow(children: [
                   getNoFieldText('200 Note'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('100 Note'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('50 Note'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('20 Note'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('10 Note'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('5 Note'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('2 Note'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('1 Note'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNoFieldText('2 Coin'),
-                  getFieldText(),
+                  getFieldText(TextInputType.number),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(
                   children: [
                     getNoFieldText('1 Coin'),
-                    getFieldText(),
+                    getFieldText(TextInputType.number),
                     getQuantityTotal(0.0),
                   ],
                 ),
@@ -94,11 +94,14 @@ class CashCount extends StatelessWidget {
     return Text(
       'Total $currency Amount: ₵$totalAmount',
       style: TextStyle(
-          color: colorWhite, fontSize: getProportionateScreenHeight(20)),
+        color: colorWhite,
+        fontSize: getProportionateScreenHeight(20),
+        fontFamily: '', // to make the currency symbol show
+      ),
     );
   }
 
-  Padding getFieldText() {
+  Padding getFieldText(TextInputType keyboard) {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -110,6 +113,7 @@ class CashCount extends StatelessWidget {
           ),
         ),
         TextField(
+          keyboardType: keyboard,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.all(5),
             hintText: '0.0',
@@ -143,6 +147,7 @@ class CashCount extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: getProportionateScreenHeight(18),
+              fontFamily: '', // to make the currency symbol show
             ),
           ),
         ],
