@@ -26,7 +26,7 @@ class _CashInTillState extends State<CashInTill> {
       bottomNavigationBar: BottomAppBar(
         child: Container(
           padding: const EdgeInsets.all(8),
-          height: 35,
+          height: 40,
           color: Colors.black87,
           child: Text(
             'Total Amount: ₵ $totalAmount',
@@ -59,13 +59,9 @@ class _CashInTillState extends State<CashInTill> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
-                  getField(
-                    'Date',
-                  ),
+                  getField('Date', TextInputType.datetime),
                   SizedBox(height: getProportionateScreenHeight(5)),
-                  getField(
-                    'Amount',
-                  ),
+                  getField('Amount', TextInputType.phone),
                   SizedBox(height: getProportionateScreenHeight(30)),
                   Align(
                     alignment: Alignment.centerRight,
@@ -100,8 +96,9 @@ class _CashInTillState extends State<CashInTill> {
         });
   }
 
-  TextField getField(String hint) {
+  TextField getField(String hint, TextInputType keyboard) {
     return TextField(
+      keyboardType: keyboard,
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(
