@@ -12,6 +12,7 @@ class CashCount extends StatelessWidget {
         child: Column(
           children: [
             Table(
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               border: TableBorder.all(),
               children: [
                 TableRow(children: [
@@ -104,75 +105,56 @@ class CashCount extends StatelessWidget {
   Padding getFieldText() {
     return Padding(
       padding: const EdgeInsets.all(5.0),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Text(
-          'Quantity',
-          style: TextStyle(
-            fontSize: 12,
-            color: Colors.black38,
-          ),
-        ),
-        TextField(
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.all(5),
-            hintText: '0.0',
-            hintStyle: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: getProportionateScreenHeight(15),
-            ),
-            border: const UnderlineInputBorder(),
-          ),
-        ),
-        SizedBox(
-          height: getProportionateScreenHeight(5),
-        )
-      ]),
-    );
-  }
-
-  Padding getNumFieldText(String value) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: crossStart,
         children: [
-          SizedBox(
-            height: getProportionateScreenHeight(10),
-          ),
           Text(
-            "₵$value",
-            textAlign: TextAlign.start,
+            'Quantity',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: getProportionateScreenHeight(18),
-              fontFamily: '', // to make the currency symbol show
+              fontSize: getProportionateScreenHeight(12),
+              color: Colors.black38,
             ),
           ),
+          TextField(
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              hintText: '0.0',
+              hintStyle: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: getProportionateScreenHeight(15),
+              ),
+              border: const UnderlineInputBorder(),
+            ),
+          ),
+          SizedBox(height: getProportionateScreenHeight(5))
         ],
+      ),
+    );
+  }
+
+  Text getNumFieldText(String value) {
+    return Text(
+      "₵$value",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: getProportionateScreenHeight(18),
+        fontFamily: '', // to make the currency symbol show
       ),
     );
   }
 
   Padding getQuantityTotal(double total) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: crossEnd,
-        children: [
-          SizedBox(
-            height: getProportionateScreenHeight(10),
-          ),
-          Text(
-            '$total',
-            textAlign: TextAlign.start,
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: getProportionateScreenHeight(18),
-            ),
-          ),
-        ],
+      padding: const EdgeInsets.only(right: 15.0),
+      child: Text(
+        '$total',
+        textAlign: TextAlign.end,
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: getProportionateScreenHeight(18),
+        ),
       ),
     );
   }
