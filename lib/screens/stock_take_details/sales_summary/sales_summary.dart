@@ -11,6 +11,7 @@ class SalesSummary extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
+          crossAxisAlignment: crossStretch,
           children: [
             SizedBox(height: getProportionateScreenHeight(40)),
             buildCard('PMS'),
@@ -24,7 +25,7 @@ class SalesSummary extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12.0),
               color: colorGrey,
-              width: double.infinity,
+              // width: double.infinity,
               child: Column(
                 crossAxisAlignment: crossStart,
                 children: [
@@ -72,7 +73,7 @@ class SalesSummary extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12.0),
       color: colorGrey,
-      width: double.infinity,
+      // width: double.infinity,
       child: Column(
         crossAxisAlignment: crossStart,
         children: [
@@ -132,7 +133,7 @@ class SalesSummary extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12.0),
       color: colorGrey,
-      width: double.infinity,
+      // width: double.infinity,
       child: Column(
         crossAxisAlignment: crossStart,
         children: [
