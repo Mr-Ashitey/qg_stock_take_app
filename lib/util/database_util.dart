@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
+import 'create_queries.dart';
+
 class DatabaseUtil {
   static final DatabaseUtil _instance = DatabaseUtil.internal();
 
@@ -27,13 +29,36 @@ class DatabaseUtil {
 
   Future<void> _onCreate(Database db, int version) async {
     // Create tables here
-    await db.execute('''
-      CREATE TABLE IF NOT EXISTS your_table_name (
-        id INTEGER PRIMARY KEY,
-        name TEXT,
-        age INTEGER
-      )
-    ''');
+    // with the create queries in the lib/util/create_queries.dart file
+    await db.execute(createProductTableQuery);
+    await db.execute(createSaleOrderTableQuery);
+    await db.execute(createDamsaTableQuery);
+    await db.execute(createDischargeTableQuery);
+    await db.execute(createGoodsInTransitTableQuery);
+    await db.execute(createCreditSaleTableQuery);
+    await db.execute(createCustomerTableQuery);
+    await db.execute(createPumpTableQuery);
+    await db.execute(createBankTransactionTableQuery);
+    await db.execute(createExpenseTableQuery);
+    await db.execute(createBankTableQuery);
+    await db.execute(createAuthorizedByTableQuery);
+    await db.execute(createExpenseReasonsTableQuery);
+    await db.execute(createWarehouseTableQuery);
+    await db.execute(createMasterReportTableQuery);
+    await db.execute(createTransferTableQuery);
+    await db.execute(createTankGroupTableQuery);
+    await db.execute(createTankTableQuery);
+    await db.execute(createTankDischargeTableQuery);
+    await db.execute(createImageTableQuery);
+    await db.execute(createNozzleResetTableQuery);
+    await db.execute(createTankResetTableQuery);
+    await db.execute(createDensityTemperatureTableQuery);
+    await db.execute(createRttTableQuery);
+    await db.execute(createStockLossTableQuery);
+    await db.execute(createCashCountTableQuery);
+    await db.execute(createUnbankedSaleTableQuery);
+    await db.execute(createLubesTableQuery);
+    await db.execute(createLubeCategoryTableQuery);
   }
 
   // Example of inserting data
