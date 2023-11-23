@@ -14,7 +14,10 @@ class SignedDocument extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {},
-            child: const Text('SUBMIT'),
+            child: Text(
+              'SUBMIT',
+              style: TextStyle(color: colorWhite),
+            ),
           ),
         ],
       ),
