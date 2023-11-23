@@ -75,16 +75,12 @@ class CashCount extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          height: 100,
+          height: getProportionateScreenHeight(80),
           color: Colors.black87,
           child: Column(
             crossAxisAlignment: crossStart,
-            children: [
-              SizedBox(height: getProportionateScreenHeight(15)),
-              getAmount('Note', 0.0),
-              SizedBox(height: getProportionateScreenHeight(10)),
-              getAmount('Coin', 0.0)
-            ],
+            mainAxisAlignment: mainSpaceEvenly,
+            children: [getAmount('Note', 0.0), getAmount('Coin', 0.0)],
           ),
         ),
       ),
@@ -93,10 +89,10 @@ class CashCount extends StatelessWidget {
 
   Text getAmount(String currency, double totalAmount) {
     return Text(
-      'Total $currency Amount: ₵$totalAmount',
+      'Total $currency Amount: ₵ $totalAmount',
       style: TextStyle(
         color: colorWhite,
-        fontSize: getProportionateScreenHeight(20),
+        fontSize: getProportionateScreenHeight(19),
         fontFamily: '', // to make the currency symbol show
       ),
     );
