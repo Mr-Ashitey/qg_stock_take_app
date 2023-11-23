@@ -37,11 +37,11 @@ class SignedDocument extends StatelessWidget {
             GestureDetector(
               onTap: () {},
               child: Container(
-                height: MediaQuery.sizeOf(context).height,
+                height: MediaQuery.sizeOf(context).height / 1.2,
                 width: double.infinity,
                 color: primaryColor3.withOpacity(.6),
                 child: const Icon(
-                  Icons.camera_alt,
+                  Icons.camera_alt_rounded,
                   color: Colors.black38,
                 ),
               ),
