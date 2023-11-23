@@ -16,53 +16,53 @@ class CashCount extends StatelessWidget {
               children: [
                 TableRow(children: [
                   getNumFieldText('200 Note'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('100 Note'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('50 Note'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('20 Note'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('10 Note'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('5 Note'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('2 Note'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('1 Note'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('2 Coin'),
-                  getFieldText(TextInputType.number),
+                  getFieldText(),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(
                   children: [
                     getNumFieldText('1 Coin'),
-                    getFieldText(TextInputType.number),
+                    getFieldText(),
                     getQuantityTotal(0.0),
                   ],
                 ),
@@ -101,7 +101,7 @@ class CashCount extends StatelessWidget {
     );
   }
 
-  Padding getFieldText(TextInputType keyboard) {
+  Padding getFieldText() {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -113,7 +113,7 @@ class CashCount extends StatelessWidget {
           ),
         ),
         TextField(
-          keyboardType: keyboard,
+          keyboardType: TextInputType.number,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.all(5),
             hintText: '0.0',
