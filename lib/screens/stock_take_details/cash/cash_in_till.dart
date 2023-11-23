@@ -32,6 +32,8 @@ class _CashInTillState extends State<CashInTill> {
             'Total Amount: ₵ $totalAmount',
             style: TextStyle(
               color: colorWhite,
+              fontSize: getProportionateScreenHeight(16),
+              fontFamily: '', // to make the currency symbol show
             ),
           ),
         ),
