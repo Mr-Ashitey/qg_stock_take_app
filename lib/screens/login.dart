@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
+import 'package:qg_stock_take_app/constants/keyboard.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 import 'package:qg_stock_take_app/screens/select_station.dart';
 
@@ -21,7 +22,7 @@ class LoginScreen extends StatelessWidget {
               TextField(
                 maxLength: 10,
                 keyboardType: TextInputType.phone,
-                onTapOutside: (event) => FocusScope.of(context).unfocus(),
+                onTapOutside: (event) => hideKeyboard(context),
                 decoration: InputDecoration(
                     counterText: "",
                     hintText: 'Phone Number',
@@ -37,7 +38,7 @@ class LoginScreen extends StatelessWidget {
               TextField(
                 maxLength: 4,
                 keyboardType: TextInputType.phone,
-                onTapOutside: (event) => FocusScope.of(context).unfocus(),
+                onTapOutside: (event) => hideKeyboard(context),
                 decoration: InputDecoration(
                     counterText: '',
                     hintText: 'Station Code',
