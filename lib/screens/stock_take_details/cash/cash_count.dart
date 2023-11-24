@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
+import 'package:qg_stock_take_app/constants/keyboard.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
 class CashCount extends StatelessWidget {
@@ -17,53 +18,53 @@ class CashCount extends StatelessWidget {
               children: [
                 TableRow(children: [
                   getNumFieldText('200 Note'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('100 Note'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('50 Note'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('20 Note'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('10 Note'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('5 Note'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('2 Note'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('1 Note'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(children: [
                   getNumFieldText('2 Coin'),
-                  getFieldText(),
+                  getFieldText(context),
                   getQuantityTotal(0.0),
                 ]),
                 TableRow(
                   children: [
                     getNumFieldText('1 Coin'),
-                    getFieldText(),
+                    getFieldText(context),
                     getQuantityTotal(0.0),
                   ],
                 ),
@@ -98,7 +99,7 @@ class CashCount extends StatelessWidget {
     );
   }
 
-  Padding getFieldText() {
+  Padding getFieldText(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Column(
@@ -112,6 +113,7 @@ class CashCount extends StatelessWidget {
             ),
           ),
           TextField(
+            onTapOutside: (event) => hideKeyboard(context),
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               hintText: '0.0',
