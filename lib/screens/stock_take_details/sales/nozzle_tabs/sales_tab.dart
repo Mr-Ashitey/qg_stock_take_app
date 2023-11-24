@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
+import '../../../../constants/keyboard.dart';
+
 class SalesTab extends StatefulWidget {
   const SalesTab({super.key});
 
@@ -121,6 +123,7 @@ class _SalesTabState extends State<SalesTab>
 //this method is for the textfields in the alert dialog box
   TextField getField(String hint) {
     return TextField(
+      onTapOutside: (event) => hideKeyboard(context),
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(
