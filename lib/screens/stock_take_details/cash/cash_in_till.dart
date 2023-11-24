@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
+import '../../../constants/keyboard.dart';
+
 class CashInTill extends StatefulWidget {
   const CashInTill({super.key});
 
@@ -101,6 +103,7 @@ class _CashInTillState extends State<CashInTill> {
   TextField getField(String hint, TextInputType keyboard) {
     return TextField(
       keyboardType: keyboard,
+      onTapOutside: (event) => hideKeyboard(context),
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(
