@@ -3,6 +3,8 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
+import '../../../../constants/keyboard.dart';
+
 class GoodsInTransit extends StatefulWidget {
   const GoodsInTransit({super.key});
 
@@ -198,6 +200,7 @@ class _GoodsInTransitState extends State<GoodsInTransit>
 //this method is for the textfields in the alert dialog box
   TextField getField(String hint, Color color) {
     return TextField(
+      onTapOutside: (event) => hideKeyboard(context),
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(

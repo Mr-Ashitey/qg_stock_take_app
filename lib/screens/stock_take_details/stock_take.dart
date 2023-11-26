@@ -17,12 +17,38 @@ class StockTakeScreen extends StatelessWidget {
         backgroundColor: primaryColor,
         title: const Text('Kasoa Akweley F/S 2.0v'),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.more_vert_outlined,
-            ),
-          ),
+          PopupMenuButton(
+            color: Colors.black87,
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    'Sync',
+                    style: TextStyle(color: colorWhite),
+                  ),
+                ),
+              ),
+              PopupMenuItem(
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    'Check for updates',
+                    style: TextStyle(color: colorWhite),
+                  ),
+                ),
+              ),
+              PopupMenuItem(
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    'Logout',
+                    style: TextStyle(color: colorWhite),
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
       ),
       body: SingleChildScrollView(

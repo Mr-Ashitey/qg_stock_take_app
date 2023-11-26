@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/constants/colors.dart';
 import 'package:qg_stock_take_app/constants/size_config.dart';
 
+import '../../../../constants/keyboard.dart';
+
 class NozzleItem extends StatefulWidget {
   const NozzleItem({super.key});
 
@@ -117,6 +119,7 @@ class _NozzleItemState extends State<NozzleItem>
     Color color,
   ) {
     return TextField(
+      onTapOutside: (event) => hideKeyboard(context),
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyle(
