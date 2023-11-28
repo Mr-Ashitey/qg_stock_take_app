@@ -6,13 +6,13 @@ import '../models/models_export.dart';
 class DatabaseOperations {
   final DatabaseHelper _dbo = DatabaseHelper();
 
-  Future<void> setProducts(List<Product> products) async {
-    for (Product product in products) {
+  Future<void> setProducts(List<ProductModel> products) async {
+    for (ProductModel product in products) {
       await setProduct(product);
     }
   }
 
-  Future<void> setProduct(Product product) async {
+  Future<void> setProduct(ProductModel product) async {
     Map<String, Object?> contentValues = <String, Object?>{};
     contentValues.addAll({
       'name': product.name,
@@ -23,8 +23,8 @@ class DatabaseOperations {
     await _dbo.insertData('product', contentValues);
   }
 
-  Product getProductFromMap(Map<String, dynamic> map) {
-    return Product(
+  ProductModel getProductFromMap(Map<String, dynamic> map) {
+    return ProductModel(
       name: map['name'],
       stationId: map['station_id'],
       noOfPumps: map['no_of_pumps'],
@@ -32,7 +32,7 @@ class DatabaseOperations {
     );
   }
 
-  Future<List<Product>> getProducts() async {
+  Future<List<ProductModel>> getProducts() async {
     List<Map<String, dynamic>> result = await _dbo.getData('product');
     return result.map((map) => getProductFromMap(map)).toList();
   }
