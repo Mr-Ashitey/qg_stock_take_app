@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:qg_stock_take_app/network/dio_client.dart';
+import 'package:qg_stock_take_app/offline/prefs_manager.dart';
 import 'package:qg_stock_take_app/screens/login.dart';
 import 'package:qg_stock_take_app/offline/database_helper.dart';
 
@@ -7,6 +9,8 @@ import 'constants/colors.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DatabaseHelper().initDatabase();
+  await DioClient().initDioClient();
+  await PrefsManager().init();
 
   runApp(const StockTakeApp());
 }
