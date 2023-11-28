@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:qg_stock_take_app/screens/login.dart';
-import 'package:qg_stock_take_app/util/database_util.dart';
+import 'package:qg_stock_take_app/offline/database_helper.dart';
 
 import 'constants/colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DatabaseUtil().initDatabase();
+  await DatabaseHelper().initDatabase();
 
   runApp(const StockTakeApp());
 }
