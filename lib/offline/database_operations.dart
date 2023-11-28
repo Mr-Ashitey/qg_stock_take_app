@@ -1,10 +1,10 @@
-import 'package:qg_stock_take_app/util/database_util.dart';
+import 'package:qg_stock_take_app/offline/database_helper.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../models/models_export.dart';
 
 class DatabaseOperations {
-  final DatabaseUtil _dbo = DatabaseUtil();
+  final DatabaseHelper _dbo = DatabaseHelper();
 
   Future<void> setProducts(List<Product> products) async {
     for (Product product in products) {
