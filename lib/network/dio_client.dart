@@ -14,13 +14,14 @@ class DioClient {
   DioClient.internal();
 
   Future<void> initDioClient() async {
-    final tokenInterceptor = TokenInterceptor();
-    tokenInterceptor.setDioInstance(_dio);
     _dio = Dio(
       BaseOptions(
-        baseUrl: '',
+        baseUrl: 'http://206.189.112.216:3024/',
       ),
     );
+
+    final tokenInterceptor = TokenInterceptor();
+    tokenInterceptor.setDioInstance(_dio);
 
     _dio.interceptors.addAll([
       AwesomeDioInterceptor(),
