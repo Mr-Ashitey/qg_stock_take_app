@@ -60,184 +60,186 @@ class PrefsManager {
     return _prefs?.getString(NAME) ?? "";
   }
 
-  void setName(String status) {
-    _prefs?.setString(NAME, status);
+  Future<void> setName(String status) async {
+    await _prefs?.setString(NAME, status);
   }
 
   int getUid() {
     return _prefs?.getInt(UID) ?? 0;
   }
 
-  void setUid(int uid) {
-    _prefs?.setInt(UID, uid);
+  Future<void> setUid(int uid) async {
+    await _prefs?.setInt(UID, uid);
   }
 
   int getStationId() {
     return _prefs?.getInt(STATION_ID) ?? 0;
   }
 
-  void setStationId(int stationId) {
-    _prefs?.setInt(STATION_ID, stationId);
+  Future<void> setStationId(int stationId) async {
+    await _prefs?.setInt(STATION_ID, stationId);
   }
 
   String getSupportNumber() {
     return _prefs?.getString(SUPPORT_NUMBER) ?? "";
   }
 
-  void setSupportNumber(String supportNumber) {
-    _prefs?.setString(SUPPORT_NUMBER, supportNumber);
+  Future<void> setSupportNumber(String supportNumber) async {
+    await _prefs?.setString(SUPPORT_NUMBER, supportNumber);
   }
 
   String getUrl() {
     return "Constants.APP_URL"; // Replace with the actual value of Constants.APP_URL
   }
 
-  void setUrl(String url) {
-    _prefs?.setString(URL, url);
+  Future<void> setUrl(String url) async {
+    await _prefs?.setString(URL, url);
   }
 
   String getToken() {
     return _prefs?.getString(TOKEN) ?? "";
   }
 
-  void setToken(String token) {
-    _prefs?.setString(TOKEN, token);
+  Future<void> setToken(String token) async {
+    await _prefs?.setString(TOKEN, token);
   }
 
   String getStationName() {
     return _prefs?.getString(STATION_NAME) ?? "";
   }
 
-  void setStationName(String token) {
-    _prefs?.setString(STATION_NAME, token);
+  Future<void> setStationName(String token) async {
+    await _prefs?.setString(STATION_NAME, token);
   }
 
   String getStationCode() {
     return _prefs?.getString(STATION_CODE) ?? "";
   }
 
-  void setStationCode(String token) {
-    _prefs?.setString(STATION_CODE, token);
+  Future<void> setStationCode(String token) async {
+    await _prefs?.setString(STATION_CODE, token);
   }
 
   String getPhone() {
     return _prefs?.getString(PHONE) ?? "";
   }
 
-  void setPhone(String token) {
-    _prefs?.setString(PHONE, token);
+  Future<void> setPhone(String token) async {
+    await _prefs?.setString(PHONE, token);
   }
 
   String getSaleError() {
     return _prefs?.getString(SALE_ERROR) ?? "";
   }
 
-  void setSaleError(String token) {
-    _prefs?.setString(SALE_ERROR, token);
+  Future<void> setSaleError(String token) async {
+    await _prefs?.setString(SALE_ERROR, token);
   }
 
   int getIcon() {
     return _prefs?.getInt(ICON) ?? 0;
   }
 
-  void setIcon(int icon) {
-    _prefs?.setInt(ICON, icon);
+  Future<void> setIcon(int icon) async {
+    await _prefs?.setInt(ICON, icon);
   }
 
   String getRadius() {
     return _prefs?.getString(RADIUS) ?? "";
   }
 
-  void setRadius(String radius) {
-    _prefs?.setString(RADIUS, radius);
+  Future<void> setRadius(String radius) async {
+    await _prefs?.setString(RADIUS, radius);
   }
 
   String getStationLatitude() {
     return _prefs?.getString(STATION_LATITUDE) ?? "";
   }
 
-  void setStationLatitude(String latitude) {
-    _prefs?.setString(STATION_LATITUDE, latitude);
+  Future<void> setStationLatitude(String latitude) async {
+    await _prefs?.setString(STATION_LATITUDE, latitude);
   }
 
   String getDownloadLink() {
     return _prefs?.getString(DOWNLOAD_LINK) ?? "";
   }
 
-  void setDownloadLink(String downloadLink) {
-    _prefs?.setString(DOWNLOAD_LINK, downloadLink);
+  Future<void> setDownloadLink(String downloadLink) async {
+    await _prefs?.setString(DOWNLOAD_LINK, downloadLink);
   }
 
   String getStationLongitude() {
     return _prefs?.getString(STATION_LONGITUDE) ?? "";
   }
 
-  void setStationLongitude(String longitude) {
-    _prefs?.setString(STATION_LONGITUDE, longitude);
+  Future<void> setStationLongitude(String longitude) async {
+    await _prefs?.setString(STATION_LONGITUDE, longitude);
   }
 
   String getCurrentVersion() {
     return _prefs?.getString(CURRENT_VERSION) ?? "";
   }
 
-  void setCurrentVersion(String currentVersion) {
-    _prefs?.setString(CURRENT_VERSION, currentVersion);
+  Future<void> setCurrentVersion(String currentVersion) async {
+    await _prefs?.setString(CURRENT_VERSION, currentVersion);
   }
 
   String getUploadUrl() {
     return _prefs?.getString(UPLOAD_URL) ?? "";
   }
 
-  void setUploadUrl(String uploadUrl) {
-    _prefs?.setString(UPLOAD_URL, uploadUrl);
+  Future<void> setUploadUrl(String uploadUrl) async {
+    await _prefs?.setString(UPLOAD_URL, uploadUrl);
   }
 
   int getCompressImageQuality() {
     return _prefs?.getInt(IMAGE_QUALITY) ?? 75;
   }
 
-  void setCompressImageQuality(int compressImageQuality) {
-    _prefs?.setInt(IMAGE_QUALITY, compressImageQuality);
+  Future<void> setCompressImageQuality(int compressImageQuality) async {
+    await _prefs?.setInt(IMAGE_QUALITY, compressImageQuality);
   }
 
   String getDepositRef() {
     return _prefs?.getString(DEPOSIT_REF) ?? "";
   }
 
-  void setDepositRef(String depositRef) {
-    _prefs?.setString(DEPOSIT_REF, depositRef);
+  Future<void> setDepositRef(String depositRef) async {
+    await _prefs?.setString(DEPOSIT_REF, depositRef);
   }
 
   String getDensityTemperatureReportId() {
     return _prefs?.getString(DENSITY_TEMPERATURE_REPORT_ID) ?? "";
   }
 
-  void setDensityTemperatureReportId(String id) {
-    _prefs?.setString(DENSITY_TEMPERATURE_REPORT_ID, id);
+  Future<void> setDensityTemperatureReportId(String id) async {
+    await _prefs?.setString(DENSITY_TEMPERATURE_REPORT_ID, id);
   }
 
   String getDensityTemperatureReportDate() {
     return _prefs?.getString(DENSITY_TEMPERATURE_REPORT_DATE) ?? "";
   }
 
-  void setDensityTemperatureReportDate(String date) {
-    _prefs?.setString(DENSITY_TEMPERATURE_REPORT_DATE, date);
+  Future<void> setDensityTemperatureReportDate(String date) async {
+    await _prefs?.setString(DENSITY_TEMPERATURE_REPORT_DATE, date);
   }
 
   bool getDensityTemperatureFeature() {
     return _prefs?.getBool(DENSITY_TEMPERATURE_FEATURE) ?? false;
   }
 
-  void setDensityTemperatureFeature(bool densityTemperatureFeature) {
-    _prefs?.setBool(DENSITY_TEMPERATURE_FEATURE, densityTemperatureFeature);
+  Future<void> setDensityTemperatureFeature(
+      bool densityTemperatureFeature) async {
+    await _prefs?.setBool(
+        DENSITY_TEMPERATURE_FEATURE, densityTemperatureFeature);
   }
 
   bool getHasSubmittedSignedDocument() {
     return _prefs?.getBool(SUBMITTED_SIGNED_DOCUMENT) ?? false;
   }
 
-  void clearPrefs() {
-    _prefs?.clear();
+  Future<void> clearPrefs() async {
+    await _prefs?.clear();
   }
 
   // OWN CUSTOM PREFS
