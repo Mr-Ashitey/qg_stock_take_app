@@ -19,8 +19,8 @@ class TokenInterceptor extends Interceptor {
   }
 
   @override
-  FutureOr<dynamic> onResponse(options, handler) async {
-    return handler.next(options);
+  FutureOr<dynamic> onResponse(response, handler) async {
+    return handler.next(response);
   }
 
   @override
