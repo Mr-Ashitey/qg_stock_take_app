@@ -15,6 +15,9 @@ class DioExceptions implements Exception {
       case DioExceptionType.connectionTimeout:
         message = ErrorMessage.connectionTimeout;
         break;
+      case DioExceptionType.connectionError:
+        message = ErrorMessage.connectionTimeout;
+        break;
       case DioExceptionType.receiveTimeout:
         message = ErrorMessage.receieveTimeout;
         break;
