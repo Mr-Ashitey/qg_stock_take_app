@@ -16,7 +16,7 @@ class DioClient {
   Future<void> initDioClient() async {
     _dio = Dio(
       BaseOptions(
-        baseUrl: 'http://206.189.112.216:3024/',
+        baseUrl: 'http://206.189.112.216:3005/',
       ),
     );
 
@@ -24,7 +24,7 @@ class DioClient {
     tokenInterceptor.setDioInstance(_dio);
 
     _dio.interceptors.addAll([
-      AwesomeDioInterceptor(),
+      AwesomeDioInterceptor(logger: print),
       tokenInterceptor,
     ]);
   }
