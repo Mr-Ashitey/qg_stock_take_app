@@ -1,4 +1,3 @@
-import 'package:qg_stock_take_app/models/station_model.dart';
 import 'package:qg_stock_take_app/network/dio_client.dart';
 import 'package:qg_stock_take_app/offline/prefs_manager.dart';
 
@@ -6,13 +5,14 @@ import 'package:dartz/dartz.dart';
 import 'package:qg_stock_take_app/util/query_util.dart';
 
 import '../models/login_model.dart';
+import '../models/station.dart';
 import '../util/base_provider.dart';
 
 class LoginProvider extends BaseProvider {
   final DioClient _dioClient = DioClient();
 
-  List<StationModel> _stations = [];
-  List<StationModel> get stations => [..._stations];
+  List<Station> _stations = [];
+  List<Station> get stations => [..._stations];
 
   Future<Either<String, void>> login(String phoneNumber, String code) async {
     try {
@@ -48,9 +48,8 @@ class LoginProvider extends BaseProvider {
 
       final result = await _dioClient.get(QueryUtils.getStations());
 
-      _stations = result
-          .map<StationModel>((station) => StationModel.fromJson(station))
-          .toList();
+      _stations =
+          result.map<Station>((station) => Station.fromJson(station)).toList();
 
       updateState(NotifierState.loaded);
       return const Right(null);
